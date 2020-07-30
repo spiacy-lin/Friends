@@ -28,6 +28,7 @@ class Friends (db.Model):
 
 db.create_all()
 
+
 class FriendsSchema(ModelSchema):
     class Meta(ModelSchema.Meta):
         model = Friends
