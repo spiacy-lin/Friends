@@ -60,7 +60,7 @@ def update_friend_by_id(id):
     data = request.get_json()
     get_friend = Friends.query.get(id)
     if data.get('description'):
-        get_friend.description = data['discription']
+        get_friend.description = data['description']
     if data.get('name'):
         get_friend.name = data['name']
     db.session.add(get_friend)
@@ -72,7 +72,7 @@ def update_friend_by_id(id):
 
 @app.route('/friends/<id>', methods=['DELETE'])
 def delete_friend_by_id(id):
-    get_friend = Friends.querry.get(id)
+    get_friend = Friends.query.get(id)
     db.session.delete(get_friend)
     db.session.commit()
     return make_response("", 204)
